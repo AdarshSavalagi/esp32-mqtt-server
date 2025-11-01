@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  express:
+    build: .
+    container_name: soil-moisture-esp32-express-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Server port
+      - PORT=3000
+
+      # MongoDB connection URI
+      - MONGO_URL=mongodb://admin:l7TGFHDi8ewhiwu@mongodb:27017/iotdb?authSource=admin
+
+    volumes:
+      - .:/usr/src/app
+
+    networks:
+      - subsdata
+
+networks:
+  subsdata:
+    external: true
