@@ -14,8 +14,6 @@ services:
       # MongoDB connection URI
       - MONGO_URL=mongodb://admin:l7TGFHDi8ewhiwu@mongodb:27017/iotdb?authSource=admin
 
-    volumes:
-      - .:/usr/src/app
 
     networks:
       - data-network
