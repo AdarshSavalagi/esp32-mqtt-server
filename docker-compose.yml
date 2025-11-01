@@ -18,8 +18,8 @@ services:
       - .:/usr/src/app
 
     networks:
-      - subsdata
+      - data-network
 
 networks:
-  subsdata:
+  data-network:
     external: true
